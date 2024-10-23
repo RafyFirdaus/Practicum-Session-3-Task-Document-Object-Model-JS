@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Dynamic Appearance Changer & My To-Do List</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Dynamic Appearance Changer</h1>
+        <label for="colorPicker">Select Background Color</label>
+        <select id="colorPicker">
+            <option value="">Default</option>
+            <option value="#add8e6">Light Blue</option>
+            <option value="#ffff00">Yellow</option>
+            <option value="#ff69b4">Pink</option>
+            <option value="#ff0000">Red</option>
+        </select>
+        
+        <label for="fontSize">Font Size</label>
+        <input type="range" id="fontSize" min="10" max="30" value="16">
+        
+        <button id="toggleDarkMode">Toggle Dark Mode</button>
+        <button id="toggleFontStyle">Toggle Font Style</button>
+        
+        <h1>My To-Do List</h1>
+        <input type="text" id="taskInput" placeholder="Add a new task...">
+        <button id="addButton">Add</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Task</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="taskList"></tbody>
+        </table>
+    </div>
+    <script src="java.js"></script>
+</body>
+</html>
