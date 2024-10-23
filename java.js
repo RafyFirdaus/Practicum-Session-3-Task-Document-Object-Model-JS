@@ -37,7 +37,7 @@ let tasks = [];
 addButton.addEventListener('click', () => {
     const taskText = taskInput.value.trim();
     if (taskText) {
-        tasks.push(taskText);
+        tasks.push({ text: taskText, completed: false });
         taskInput.value = '';
         renderTasks();
     }
@@ -47,8 +47,12 @@ function renderTasks() {
     taskList.innerHTML = '';
     tasks.forEach((task, index) => {
         const row = document.createElement('tr');
+        row.classList.toggle('completed', task.completed);
         row.innerHTML = `
-            <td>${task}</td>
+            <td>
+                <input type="checkbox" ${task.completed ? 'checked' : ''} onclick="toggleTaskCompletion(${index})">
+                <span>${task.text}</span>
+            </td>
             <td class="actions">
                 <button class="edit" onclick="editTask(${index})">
                     <i class="bi bi-pencil-square"></i>
@@ -63,14 +67,19 @@ function renderTasks() {
 }
 
 function editTask(index) {
-    const newTask = prompt('Edit task:', tasks[index]);
+    const newTask = prompt('Edit task:', tasks[index].text);
     if (newTask) {
-        tasks[index] = newTask;
+        tasks[index].text = newTask;
         renderTasks();
     }
 }
 
 function deleteTask(index) {
     tasks.splice(index, 1);
+    renderTasks();
+}
+
+function toggleTaskCompletion(index) {
+    tasks[index].completed = !tasks[index].completed;
     renderTasks();
 }

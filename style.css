@@ -177,3 +177,8 @@ button.add:hover {
     color: white; 
     border-color: white; 
 }
+
+.completed span {
+    text-decoration: line-through;
+    color: #888; 
+}
