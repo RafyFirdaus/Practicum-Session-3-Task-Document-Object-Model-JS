@@ -49,9 +49,13 @@ function renderTasks() {
         const row = document.createElement('tr');
         row.innerHTML = `
             <td>${task}</td>
-            <td>
-                <button class="edit" onclick="editTask(${index})">Edit</button>
-                <button class="delete" onclick="deleteTask(${index})">Delete</button>
+            <td class="actions">
+                <button class="edit" onclick="editTask(${index})">
+                    <i class="bi bi-pencil-square"></i>
+                </button>
+                <button class="delete" onclick="deleteTask(${index})">
+                    <i class="bi bi-trash3"></i>
+                </button>
             </td>
         `;
         taskList.appendChild(row);

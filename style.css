@@ -16,7 +16,7 @@ body {
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
-    background-color: #fff;
+    background-color: #F5EFFF;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -51,6 +51,10 @@ button {
     cursor: pointer;
 }
 
+.Add{
+    width: 30%;
+}
+
 button:hover {
     background-color: #45a049;
 }
@@ -60,19 +64,53 @@ table {
     margin-top: 10px;
 }
 
-th, td {
+th{
+    padding: 10px;
+    text-align: right;
+}
+
+td{
     padding: 10px;
     text-align: left;
 }
 
+.task{
+    text-align: left;
+}
+
+td.actions {
+    text-align: right;
+}
+
 button.edit {
-    background-color: #4CAF50;
-    width: 50%;
+    background-color: transparent; 
+    border: 2px solid #37AFE1; 
+    color: #37AFE1; 
+    width: 20%;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+button.edit:hover {
+    background-color: #37AFE1; 
+    color: white; 
+    border-color: white; 
+    border-radius: 15%;
+
 }
 
 button.delete {
-    background-color: #4CAF50;
-    width: 50%;
+    background-color: transparent; 
+    border: 2px solid #E4003A; 
+    color: #E4003A; 
+    width: 20%;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+button.delete:hover {
+    background-color: #E4003A; 
+    color: white; 
+    border-color: white; 
+    border-radius: 15%;
 }
 
 body.dark-mode {
@@ -85,4 +123,57 @@ body.dark-mode label,
 body.dark-mode button,
 body.dark-mode p {
     color: #000000; 
+}
+
+.task-input-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 0; 
+}
+
+.task-input-container input[type="text"] {
+    flex: 1;
+    margin: 0; 
+}
+
+.task-input-container .add {
+    flex-shrink: 0;
+    width: auto;
+    margin: 0; 
+}
+
+button.add {
+    background-color: transparent; 
+    border: 2px solid #4CAF50; 
+    color: #4CAF50; 
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+button.add:hover {
+    background-color: #4CAF50; 
+    color: white; 
+    border-color: white; 
+}
+
+.toggle-buttons {
+    display: flex;
+    gap: 10px; 
+    justify-content: center; 
+    margin-top: 10px; 
+}
+
+.toggle-buttons button {
+    background-color: transparent; 
+    border: 2px solid #4CAF50; 
+    color: #4CAF50; 
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    flex: 1; 
+    width: auto;
+}
+
+.toggle-buttons button:hover {
+    background-color: #4CAF50; 
+    color: white; 
+    border-color: white; 
 }

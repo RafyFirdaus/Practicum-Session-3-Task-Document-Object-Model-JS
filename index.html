@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Dynamic Appearance Changer & My To-Do List</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
     <div class="container">
@@ -21,16 +22,20 @@
         <label for="fontSize">Font Size</label>
         <input type="range" id="fontSize" min="10" max="30" value="16">
         
-        <button id="toggleDarkMode">Toggle Dark Mode</button>
-        <button id="toggleFontStyle">Toggle Font Style</button>
+        <div class="toggle-buttons">
+            <button id="toggleDarkMode">Toggle Dark Mode</button>
+            <button id="toggleFontStyle">Toggle Font Style</button>
+        </div>
         
         <h1>My To-Do List</h1>
-        <input type="text" id="taskInput" placeholder="Add a new task...">
-        <button id="addButton">Add</button>
+        <div class="task-input-container">
+            <input type="text" id="taskInput" placeholder="Add a new task...">
+            <button class="add" id="addButton"><i class="bi bi-plus-lg"></i> Add Task</button>
+        </div>
         <table>
             <thead>
                 <tr>
-                    <th>Task</th>
+                    <th class="task">Task</th>
                     <th>Actions</th>
                 </tr>
             </thead>
